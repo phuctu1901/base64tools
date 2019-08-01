@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="./bootstrap.min.css" rel="stylesheet">
+  <link href="./mab-jquery-taginput.css" rel="stylesheet">
+  <link href="./jquerysctipttop.css" rel="stylesheet">
+  <title>JS Bin</title>
+</head>
+
+<body>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="text-center">
+      <h1>Thử nghiệm tính năng gắn tag giống như Facebook</h1>
+    </div>
+
+    <div class="form-group">
+      <label for="city_tag">Vui lòng viết các thẻ tag</label>
+      <input type="text" class="tag-input" value="cat|dog|catfish|fish">
+      
+    </div>
+  </div>
+
+  <div class="form-group col-md-12">
+    <input id="file" type="file" />
+    <br />
+    <button type="button" class="btn btn-success" id="button">Convert file to base 64</button>
+  </div>
+
+
+
+
+  <div class="col-md-8 col-md-offset-2">
+    <textarea rows="4" cols="40" id="base64string" class="form-control">
+    </textarea>
+    
+    <button type="button" class="btn btn-warning" id="copy2clipboard">Copy to clipboard</button>
+    <button type="button" class="btn btn-info" id="convert2file">Convert to file</button>
+
+  </div>
+
+</body>
+<script src="script.js"></script>
+<script src="./bootstrap.min.css"></script>
+<script src="./jquery-1.11.3.min.js"></script>
+<script src="./mab-jquery-taginput.js"></script>
+<script src="./typeahead.bundle.min.js"></script>
+<script>
+    (function($){
+    
+    // Instantiate the Bloodhound suggestion engine
+    var tags = new Bloodhound({
+        datumTokenizer: function(d) { return Bloodhound.tokenizers.whitespace(d.tag); },
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        local: [
+            { tag: 'dog' },
+            { tag: 'cat' },
+            { tag: 'fish' },
+            { tag: 'catfish' },
+            { tag: 'dogfish' }
+        ]
+    });
+    
+    tags.initialize();
+    
+    $('.tag-input').tagInput({
+        allowDuplicates: false,
+        typeahead: true,
+        typeaheadOptions: {
+            highlight: true
+        },
+        typeaheadDatasetOptions: {
+            displayKey: 'tag',
+            source: tags.ttAdapter()
+        }
+    });
+    
+    $('#results a[rel="external"]').attr('target', '_blank');
+    
+    })(jQuery);
+    
+    
+    </script>
+</html>

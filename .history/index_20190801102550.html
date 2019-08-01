@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="./bootstrap.min.css">
+  <link href="./jquerysctipttop.css">
+  <link href="./mab-jquery-taginput.css">
+  <title>JS Bin</title>
+</head>
+
+<body>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="text-center">
+      <h1>Thử nghiệm tính năng gắn tag giống như Facebook</h1>
+    </div>
+
+    <div class="form-group">
+      <label for="city_tag">Vui lòng viết các thẻ tag</label>
+      <input id="tags" type="text" value="Istanbul, Adana, Adiyaman, Afyon, Agri, Aksaray, Ankara" data-role="tagsinput"
+        class="form-control" />
+    </div>
+  </div>
+
+  <div class="form-group col-md-12">
+    <input id="file" type="file" />
+    <br />
+    <button type="button" class="btn btn-success" id="button">Convert file to base 64</button>
+  </div>
+
+
+
+
+  <div class="col-md-8 col-md-offset-2">
+    <textarea rows="4" cols="40" id="base64string" class="form-control">
+    </textarea>
+    
+    <button type="button" class="btn btn-warning" id="copy2clipboard">Copy to clipboard</button>
+    <button type="button" class="btn btn-info" id="convert2file">Convert to file</button>
+
+  </div>
+
+</body>
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="./bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+
+<script src="src/jquery.tagsinput-revisited.js"></script>
+<link rel="stylesheet" href="src/jquery.tagsinput-revisited.css">
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+
+<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+</html>
